@@ -6,7 +6,7 @@ using Serilog;
 
 namespace SlackAlertLogger;
 
-public static class CdmLogger
+public static class SlackAlertLogger
 {
     #region >.net6.0
     // call this method in Program.cs like this "builder.UseCdmLogger()" before "builder.Build()"
