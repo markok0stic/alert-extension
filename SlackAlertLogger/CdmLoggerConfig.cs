@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace CustomCdmLogger;
+namespace SlackAlertLogger;
 
 public static class CdmLogger
 {
