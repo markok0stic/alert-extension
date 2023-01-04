@@ -8,8 +8,6 @@ Uses Serilog and its Slack Client for logging anything to specific slack channel
  - Versions below 6.0
  In a Main call this static method CdmLogger.UseCdmLoggerMain() before Build() call
  In program.cs attach UseCdmLogger() method to "Host.CreateDefaultBuilder(args)"
- - Source code:
-https://github.com/markok0stic/slack-alert-extension
 - In appsettings.json configure these params:
 ```JSON
 "Serilog": {
