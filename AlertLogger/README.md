@@ -53,5 +53,5 @@ Depends on the .net core version
   }
 ```
 - You can exclude any of above mentioned Serilog configs (sinks) in order to not use them at all.
-- Possible log levels https://github.com/serilog/serilog/blob/dev/src/Serilog/Events/LogEventLevel.cs.
+- Possible log levels [LogEventLevel](https://github.com/serilog/serilog/blob/dev/src/Serilog/Events/LogEventLevel.cs).
 - Read more about this configuration on [Serilog](https://serilog.net/) and [Serilog.Sinks.Slack](https://github.com/serilog-contrib/serilog-sinks-slackclient).
