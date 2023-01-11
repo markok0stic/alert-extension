@@ -1,13 +1,19 @@
-# Simple slack alert package
-Uses Serilog and its Slack Client for logging anything to specific slack channel.
+# Simple alert package
+This nuget use Serilog and its Sinks Clients for logging anything to specific destination.
+This one so far is for following logs: 
+- Slack
+- File
+- Console
 
 ### Installation
- Depends on the .net core version
- - Versions above 6.0
- Just call method builder.UseCdmLogger() in the program.cs
- - Versions below 6.0
- In a Main call this static method CdmLogger.UseCdmLoggerMain() before Build() call
- In program.cs attach UseCdmLogger() method to "Host.CreateDefaultBuilder(args)"
+Depends on the .net core version
+- Versions above 6.0
+  Just call method builder.UseAlertLogger() in the program.cs
+- Versions below 6.0
+  In a Main call this static method CdmLogger.UseAlertLoggerMain() before Build() call
+  In program.cs attach UseAlertLogger() method to "Host.CreateDefaultBuilder(args)"
+- Source code:
+  https://github.com/markok0stic/slack-alert-extension
 - In appsettings.json configure these params:
 ```JSON
 "Serilog": {
@@ -18,6 +24,15 @@ Uses Serilog and its Slack Client for logging anything to specific slack channel
         "Args":
         {
           "restrictedToMinimumLevel": "Information"
+        }
+      },
+      {
+        "Name": "File",
+        "Args":
+        {
+          "path": "log.txt",
+          "rollingInterval": "Day",
+          "restrictedToMinimumLevel": "Error"
         }
       },
       {
@@ -37,4 +52,6 @@ Uses Serilog and its Slack Client for logging anything to specific slack channel
     ]
   }
 ```
- - Read more about this configuration on [Serilog](https://serilog.net/) and [Serilog.Sinks.Slack](https://github.com/serilog-contrib/serilog-sinks-slackclient).
+- You can exclude any of above mentioned Serilog configs (sinks) in order to not use them at all.
+- Possible log levels [LogEventLevel](https://github.com/serilog/serilog/blob/dev/src/Serilog/Events/LogEventLevel.cs).
+- Read more about this configuration on [Serilog](https://serilog.net/) and [Serilog.Sinks.Slack](https://github.com/serilog-contrib/serilog-sinks-slackclient).
