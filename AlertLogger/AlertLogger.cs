@@ -4,9 +4,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace SlackAlertLogger;
+namespace AlertLogger;
 
-public static class SlackAlertLogger
+public static class AlertLogger
 {
     #region >.net6.0
     
