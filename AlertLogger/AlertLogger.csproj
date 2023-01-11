@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
         <VersionPrefix>2.0.0</VersionPrefix>
         <Authors>Marko Kostic</Authors>
-        <PackageTags>log</PackageTags>
+        <PackageTags>log;slack;file;logger;console</PackageTags>
         <RootNamespace>SlackAlertLogger</RootNamespace>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>

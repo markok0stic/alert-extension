@@ -10,7 +10,7 @@ Depends on the .net core version
 - Versions above 6.0
   Just call method builder.UseAlertLogger() in the program.cs
 - Versions below 6.0
-  In a Main call this static method CdmLogger.UseAlertLoggerMain() before Build() call
+  In a Main call this static method AlertLogger.UseAlertLoggerMain() before Build() call
   In program.cs attach UseAlertLogger() method to "Host.CreateDefaultBuilder(args)"
 - Source code:
   https://github.com/markok0stic/slack-alert-extension
