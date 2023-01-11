@@ -9,21 +9,21 @@ namespace SlackAlertLogger;
 public static class SlackAlertLogger
 {
     #region >.net6.0
+    
     // call this method in Program.cs like this "builder.UseCdmLogger()" before "builder.Build()"
-    public static void UseCdmLogger(this WebApplicationBuilder builder)
+    public static void UseAlertLogger(this WebApplicationBuilder builder)
     {
         builder.Logging.ClearProviders();
         builder.Host.UseSerilog((ctx, lc) => { lc
-            .ReadFrom.Configuration(builder.Configuration)
-            .Enrich.FromLogContext();
+                .ReadFrom.Configuration(builder.Configuration);
         });
     }
     #endregion
 
     #region <.net6.0
     
-    // call this method into Main before Build method call call
-    public static void UseCdmLoggerMain()
+    // call this method into Main before Build method call
+    public static void UseAlertLoggerMain()
     {
         Log.Logger = new LoggerConfiguration()
             .ReadFrom
@@ -32,8 +32,9 @@ public static class SlackAlertLogger
                 .Build())
             .CreateLogger();
     }
+    
     // attach this method to "Host.CreateDefaultBuilder(args)"
-    public static IHostBuilder UseCdmLogger(this IHostBuilder builder)
+    public static IHostBuilder UseAlertLogger(this IHostBuilder builder)
     {
         builder.ConfigureLogging(logingBuilder =>
         {
