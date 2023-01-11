@@ -1,6 +1,6 @@
-# Simple slack alert package
+# Simple alert package
 This nuget use Serilog and its Sinks Clients for logging anything to specific destination.
-This one so far is for: 
+This one so far is for following logs: 
 - Slack
 - File
 - Console
