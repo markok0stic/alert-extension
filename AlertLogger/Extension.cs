@@ -29,6 +29,8 @@ public static class AlertLogger
             .ReadFrom
             .Configuration(new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
+                .AddJsonFile("appsettings.Development.json")
+                .AddJsonFile("appsettings.Production.json")
                 .Build())
             .CreateLogger();
     }
