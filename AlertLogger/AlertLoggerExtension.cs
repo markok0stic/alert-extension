@@ -10,7 +10,7 @@ public static class AlertLoggerExtension
 {
     #region >.net6.0
     
-    // call this method in Program.cs like this "builder.UseAlertLogger()" before "builder.Build()" ee
+    // call this method in Program.cs like this "builder.UseAlertLogger()" before "builder.Build()" ee eee
     public static void UseAlertLogger(this WebApplicationBuilder builder)
     {
         builder.Logging.ClearProviders();
