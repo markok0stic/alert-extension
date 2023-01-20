@@ -10,7 +10,7 @@ public static class AlertLoggerExtension
 {
     #region >.net6.0
     
-    // call this method in Program.cs like this "builder.UseAlertLogger()" before "builder.Build()"
+    // invoke this method in Program.cs like this "builder.UseAlertLogger()" before "builder.Build()"
     public static void UseAlertLogger(this WebApplicationBuilder builder)
     {
         builder.Logging.ClearProviders();
@@ -22,7 +22,7 @@ public static class AlertLoggerExtension
 
     #region <.net6.0
     
-    // call this method into Main before Build method call
+    // invoke this method into Main before Build method call
     public static void UseAlertLoggerMain()
     {
         var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
