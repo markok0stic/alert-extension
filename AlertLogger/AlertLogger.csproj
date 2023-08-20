@@ -4,7 +4,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <VersionPrefix>2.0.1</VersionPrefix>
+        <VersionPrefix>2.4.0</VersionPrefix>
         <Authors>Marko Kostic</Authors>
         <PackageTags>log;slack;file;logger;console</PackageTags>
         <RootNamespace>AlertLogger</RootNamespace>
