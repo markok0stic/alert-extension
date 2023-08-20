@@ -8,7 +8,7 @@ namespace AlertLogger;
 
 public static class AlertLoggerExtension
 {
-    #region >.net6.0
+    #region >=.net6.0
     
     // invoke this method in Program.cs like this "builder.UseAlertLogger()" before "builder.Build()"
     public static void UseAlertLogger(this WebApplicationBuilder builder)

@@ -1,19 +1,37 @@
 # Simple alert package
-This nuget use Serilog and its Sinks Clients for logging anything to specific destination.
-This one so far is for following logs: 
+This nuget uses Serilog and its Sinks Clients for logging anything to specific destination.
+
+This one so far can be used for the following destinations: 
 - Slack
 - File
 - Console
 
 ### Installation
-Depends on the .net core version
-- Versions above 6.0
-  Just call method builder.UseAlertLogger() in the program.cs
-- Versions below 6.0
-  In a Main call this static method AlertLoggerExtension.UseAlertLoggerMain() before Build() call
-  In program.cs attach UseAlertLogger() method to "Host.CreateDefaultBuilder(args)"
+Depends on the **.net core version**
+- Versions above **6.0**
+  Just call method 
+``` 
+// ./Program.cs
+builder.UseAlertLogger()
+```
+- Versions below **6.0**
+
+  In Main.cs call this static method:
+```
+// ./Main.cs
+// before Build() call
+AlertLoggerExtension.UseAlertLoggerMain()
+```
+```
+// ./Program.cs 
+Host.CreateDefaultBuilder(args).UseAlertLogger()
+```
+## JSON config
 - In appsettings.json configure these params:
-```JSON
+- _Notes_:
+  - _Dont forget to set the ASPNETCORE_ENVIRONMENT variable for production_
+  - (.net < 6.0) _If you have appsettings.${Environment}.json please prefer to put any of the json config inside those files_
+```JSON 
 "Serilog": {
     "MinimumLevel": "Information",
     "WriteTo": [
